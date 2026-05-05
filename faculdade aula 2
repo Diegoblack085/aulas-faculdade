@@ -1,0 +1,26 @@
+#include <stdio.h>
+int resultado;
+int numero;
+int main()
+{
+printf("Seja bem vindo a tabuada de multiplicação, divisão e adição\n");
+printf("Digite um numero: ");
+scanf("%d", &numero);
+printf("O antecessor do seu numero é: %d\n", numero - 1);
+printf("O sucessor do seu numero é: %d\n", numero + 1);
+for (int v = 1; v <=10;v++)
+}
+{
+    printf("%d x %d = %d\n", numero, v, (numero * v));
+
+}
+for (int d = 1; d <=10; d++)
+{
+    printf("%d / %d = %d\n", numero, d, (numero / d));
+    
+}
+for (int d1 = 1; d1 <=10; d1++)
+{
+    printf("%d + %d = %d\n", numero, d1, (numero + d1));
+    
+}
