@@ -1,0 +1,20 @@
+#include <stdio.h>
+int numero= 0; int resto=0;
+
+int main() {
+
+    printf("digite seu valor que você quer saber se é impar ou par\n");
+    scanf("%d", &numero);
+    resto = numero % 2;
+   
+    if(resto ==0){
+         printf("esse numero é par");
+   
+    }
+    else{
+       
+        printf("esse numero é impar");
+    }
+ 
+    return 0;
+}
