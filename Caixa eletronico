@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <unistd.h>
+int main() {
+int opcao = ! 0;
+float saldo = 0;
+float valor;
+
+do {
+printf("\n--- CAIXA ELETRONICO ---\n");
+printf("1 - Consultar Saldo\n");
+printf("2 - Depositar\n");
+printf("3 - Sacar\n");
+printf("4 - Encerrar\n");
+printf("Escolha uma opcao:\n");
+scanf("%d", &opcao);
+
+switch(opcao) {
+case 1:
+// SEU CODIGO AQUI: Exibir o saldo atual formatado com 2 casas decimais.
+printf("Saldo atual: R$ %.2f\n", saldo);
+sleep(2);
+break;
+
+case 2:
+// SEU CODIGO AQUI: Pedir o valor do deposito e somar ao 'saldo'.
+
+printf("Digite o valor do deposito:\n");
+scanf("%f", &valor);
+(saldo = saldo + valor);
+printf("Seu saldo agora é de:  R$ %.2f\n", saldo);
+sleep(2);
+break;
+
+case 3:
+// SEU CODIGO AQUI: Pedir o valor do saque.
+// Se o valor for menor ou igual ao saldo, subtrair.
+// Senao, avisar que o saldo e insuficiente.
+            printf("Seu saldo atual para saque é: R$ %.2f\n", saldo);
+printf("Digite o valor do saque:\n");
+scanf("%f", &valor);
+
+if(valor <= saldo) {
+(saldo = saldo - valor);
+printf("Saque realizado com sucesso!\n");
+printf("Saldo atual é: R$ %.2f\n!", saldo);
+                sleep(2);
+} else {
+printf("Saldo insuficiente!\n");
+printf("Deposite para poder sacar esse valor!\n");
+sleep(2);
+}
+                sleep(2);
+break;
+
+case 4:
+printf("Encerrando o sistema, volte sempre!\n");
+break;
+sleep(1);
+
+default:
+printf("Opcao invalida! Tente novamente.\n");
+
+}
