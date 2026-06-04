@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+// Função recursiva para calcular o MDC
+int calcular_mdc(int dividendo, int divisor) {
+    // Caso base: quando o divisor (resto da operação anterior) chega a 0
+    if (divisor == 0) {
+        return dividendo;
+    }
+    // Chamada recursiva: o divisor vira dividendo, e o resto vira divisor
+    return calcular_mdc(divisor, dividendo % divisor);
+}
+
+int main() {
+    int num1, num2, mdc;
+
+    printf("--- Calculo de MDC (Divisoes Sucessivas) ---\n");
+    printf("Digite o primeiro numero: ");
+    scanf("%d", &num1);
+    printf("Digite o segundo numero: ");
+    scanf("%d", &num2);
+
+    // Estrutura condicional para garantir que o maior numero seja o dividendo inicial
+    if (num1 >= num2) {
+        mdc = calcular_mdc(num1, num2);
+    } else {
+        mdc = calcular_mdc(num2, num1);
+    }
+
+    printf("\nO MDC entre %d e %d e: %d\n", num1, num2, mdc);
+
+    return 0;
+}
